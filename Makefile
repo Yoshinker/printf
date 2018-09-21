@@ -5,7 +5,6 @@ CC = gcc
 CFLAGS = -Wall -Werror -Werror -Iincludes
 
 SRC_DIR = srcs
-OBJ_DIR = obj
 
 FILES = ft_putchar.o \
 	ft_putstr.o \
@@ -20,10 +19,10 @@ OBJS = $(addprefix $(SRC_DIR)/, $(FILES))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $@
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -o $@
 
 clean:
 	/bin/rm -f $(OBJS)
