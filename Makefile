@@ -19,10 +19,10 @@ OBJS = $(addprefix $(SRC_DIR)/, $(FILES))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $@
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o : %.c
-	$(CC) $(CFLAGS) -o $@
+.o : %.c
+	$(CC) $(CFLAGS) -c $^
 
 clean:
 	/bin/rm -f $(OBJS)
